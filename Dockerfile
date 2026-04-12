@@ -5,6 +5,7 @@ RUN apk add --no-cache git
 RUN npm install -g pnpm
 RUN pnpm install -g corepack@latest
 RUN corepack enable
+EXPOSE ${INTERNAL_PORT}
 
 WORKDIR /app
 COPY . .
