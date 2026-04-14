@@ -4,8 +4,6 @@ import { Request, Response } from "express";
 import { middlewareLoging } from "./middleware/middlewareLogging.js";
 import { respondWithJSON } from "./helperfunctions/respondWithJSON.js";
 
-process.loadEnvFile();
-
 const env = process.env;
 const PORT = env.API_PORT || 3000;
 const API_URL = env.API_URL;
@@ -21,4 +19,5 @@ app.get("/api/health", (req: Request, res: Response) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running at ${API_URL}:${PORT}`);
+  console.log('test');
 });

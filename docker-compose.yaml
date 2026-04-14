@@ -6,6 +6,8 @@ services:
       dockerfile: backend/Dockerfile
     ports:
       - ${API_PORT}:${API_PORT}
+    env_file:
+      - .env
     volumes:
       - ./backend:/app/backend
       - /app/node_modules

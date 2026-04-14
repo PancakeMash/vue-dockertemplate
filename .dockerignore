@@ -1,2 +1,3 @@
-backend/dist/
 .env.example
+backend/dist
+node_modules
