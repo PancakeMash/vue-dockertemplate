@@ -1,3 +1,7 @@
 .env.example
 backend/dist
 node_modules
+backend/Dockerfile
+.git
+.gitignore
+README.md

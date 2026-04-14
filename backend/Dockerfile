@@ -13,6 +13,8 @@ WORKDIR /app
 
 COPY package.json pnpm-lock.yaml* tsconfig.json ./
 
+RUN pnpm install
+
 COPY backend/ ./backend/
 
 EXPOSE 3000
