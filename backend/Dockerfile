@@ -9,13 +9,11 @@ RUN npm install -g pnpm
 RUN pnpm install -g corepack@latest
 RUN corepack enable
 
-EXPOSE ${INTERNAL_PORT}
-
 WORKDIR /app
-COPY . .
+COPY backend/ ./backend/
 
-COPY package*.json ./
+COPY package.json pnpm-lock.yaml* ./
 
 RUN pnpm install
 
-RUN pnpm run build
+CMD ["pnpm", "run", "api:dev"]
