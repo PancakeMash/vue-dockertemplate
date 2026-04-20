@@ -1,6 +1,6 @@
 services:
   backend:
-    container_name: backend
+    container_name: ${API_CONTAINER_NAME}
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -13,14 +13,16 @@ services:
       - /app/node_modules
     command: 'pnpm run api:dev'
 
-  # vue_app:
-  #   container_name: ${CONTAINER_NAME}
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - ${EXTERNAL_PORT}:${INTERNAL_PORT}
-  #   volumes:
-  #     - .:/app
-  #     - /app/node_modules
-  #   command: 'pnpm run dev --host --port ${INTERNAL_PORT}'
+  frontend:
+    container_name: ${VUE_CONTAINER_NAME}
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - ${VUE_EXTERNAL_PORT}:${VUE_INTERNAL_PORT}
+    env_file:
+      - .env
+    volumes:
+      - .:/app/frontend
+      - /app/node_modules
+    command: 'pnpm run dev --host --port ${VUE_INTERNAL_PORT}'

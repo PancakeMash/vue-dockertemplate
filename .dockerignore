@@ -5,3 +5,6 @@ backend/Dockerfile
 .git
 .gitignore
 README.md
+frontend/node_modules
+frontend/.vscode
+frontend/Dockerfile

@@ -6,15 +6,17 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN apk add --no-cache git
 RUN npm install -g pnpm
 
+ARG CI=true
+
 RUN pnpm install -g corepack@latest
 RUN corepack enable
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml* tsconfig.json ./
+COPY . .
 
-RUN pnpm install
+COPY package*.json ./
 
-COPY backend/ ./backend/
+RUN pnpm install 
 
-CMD ["pnpm", "run", "api:dev"]
+RUN pnpm run build
