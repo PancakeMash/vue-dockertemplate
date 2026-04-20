@@ -9,12 +9,12 @@ RUN npm install -g pnpm
 RUN pnpm install -g corepack@latest
 RUN corepack enable
 
-WORKDIR /app
+WORKDIR /BE
 
 COPY package.json pnpm-lock.yaml* tsconfig.json ./
 
 RUN pnpm install
 
-COPY backend/ ./backend/
+COPY . .
 
 CMD ["pnpm", "run", "api:dev"]

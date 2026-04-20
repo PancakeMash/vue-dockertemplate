@@ -2,13 +2,13 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "nodenext",
-    "rootDir": "./backend/src",
-    "outDir": "./backend/dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "strict": true,
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["./backend/src/**/*.ts"],
+  "include": ["./src/**/*.ts"],
   "exclude": ["node_modules"]
 }
