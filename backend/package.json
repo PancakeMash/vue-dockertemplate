@@ -8,7 +8,10 @@
     "api:test": "echo \"Error: no test specified\" && exit 1",
     "api:build": "npx tsc",
     "api:start": "node dist/index.js",
-    "api:dev": "npx tsc && node dist/index.js && npx prisma init"
+    "api:dev": "npx tsc && node dist/index.js",
+    "db:generate": "drizzle-kit generate --config=./src/drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config=./src/drizzle.config.ts",
+    "db:studio": "drizzle-kit studio"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +20,13 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.6.0",
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10",
     "typescript": "^6.0.2"
   },
   "dependencies": {
-    "@prisma/client": "^7.8.0",
+    "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",
-    "prisma": "^7.8.0"
+    "pg": "^8.20.0"
   }
 }
