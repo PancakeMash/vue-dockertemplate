@@ -1,4 +1,0 @@
-// Make sure to install the 'pg' package
-import { drizzle } from "drizzle-orm/node-postgres";
-
-export const db = drizzle("postgresql://testuser:testpass@localhost:5432/testname?schema=public");

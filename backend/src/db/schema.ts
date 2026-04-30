@@ -13,7 +13,7 @@ const updatedAt = timestamp("updated_at", { withTimezone: true })
   .defaultNow()
   .$onUpdate(() => new Date())
 
-export const ProductTable = pgTable(
+export const products = pgTable(
   "products",
   {
     id: uuid("id").primaryKey().defaultRandom(),
