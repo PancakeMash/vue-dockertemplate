@@ -4,7 +4,6 @@ import postgres from "postgres";
 import * as schema from "./schema.js";
 import { config } from "../config.js";
 
-const conn = postgres("postgresql://testuser:testpass@db:5432/testname?sslmode=disable");
-export const db = drizzle(conn, { schema });
+const conn = postgres(config.db.dbURL);
 
-// export const db = drizzle("postgresql://testuser:testpass@localhost:5432/testname?sslmode=disable");
+export const db = drizzle(conn, { schema });

@@ -1,5 +1,6 @@
 import express from "express";
 import { Request, Response } from "express";
+import { config } from "./config.js";
 
 import { middlewareLoging } from "./middleware/middlewareLogging.js";
 import { respondWithJSON } from "./helperfunctions/respondWithJSON.js";
@@ -24,5 +25,3 @@ app.get("/api/products", getProductData);
 app.listen(PORT, () => {
   console.log(`Server is running at ${API_URL}:${PORT}`);
 });
-
-//I am to try and use the docker container name instead of localhost
