@@ -24,3 +24,5 @@ app.get("/api/products", getProductData);
 app.listen(PORT, () => {
   console.log(`Server is running at ${API_URL}:${PORT}`);
 });
+
+//I am to try and use the docker container name instead of localhost

@@ -1,7 +1,5 @@
 import { defineConfig } from "drizzle-kit"
 
-
-
 export default defineConfig({
   schema: "./src/db/schema.ts", // path to your schema.ts file
   out: "./src/db/migrations", // path to your migrations
@@ -9,6 +7,6 @@ export default defineConfig({
   strict: true,
   verbose: true,
   dbCredentials: {
-    url: "postgresql://testuser:testpass@localhost:5432/testname?schema=public",
+    url: "postgresql://testuser:testpass@test_db:5432/testname?sslmode=disable",
   },
 })

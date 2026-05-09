@@ -5,7 +5,7 @@ const migrationConfig: MigrationConfig = {
 };
 
 const dbConfig: DBConfig = {
-    dbURL: "postgresql://testuser:testpass@localhost:5432/testname?schema=public",
+    dbURL: "postgresql://testuser:testpass@test_db:5432/testname?sslmode=disable",
     migrationConfig: migrationConfig
 }
 
