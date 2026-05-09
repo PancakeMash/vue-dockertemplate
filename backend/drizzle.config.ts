@@ -7,6 +7,6 @@ export default defineConfig({
   strict: true,
   verbose: true,
   dbCredentials: {
-    url: "postgresql://testuser:testpass@test_db:5432/testname?sslmode=disable",
+    url: "postgresql://testuser:testpass@localhost:5432/testname?sslmode=disable",
   },
 })
