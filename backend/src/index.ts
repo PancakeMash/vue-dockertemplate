@@ -4,10 +4,10 @@ import { Request, Response } from "express";
 import { middlewareLogging, middlewareErrorHandler } from "./middleware/middlewareLogging.js";
 import { respondWithJSON } from "./helperfunctions/respondWithJSON.js";
 
-// import postgres from "postgres";
-// import { migrate } from "drizzle-orm/postgres-js/migrator";
-// import { drizzle } from "drizzle-orm/postgres-js";
-// import { config } from "./config.js";
+import postgres from "postgres";
+import { migrate } from "drizzle-orm/postgres-js/migrator";
+import { drizzle } from "drizzle-orm/postgres-js";
+import { config } from "./config.js";
 
 // await runMigrations();
 

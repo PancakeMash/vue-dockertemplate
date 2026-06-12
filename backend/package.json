@@ -8,7 +8,10 @@
     "api:build": "tsc",
     "api:start": "node --env-file=../.env dist/index.js",
     "api:dev": "node --env-file=../.env --import tsx --watch src/index.ts",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "db:generate": "npx drizzle-kit generate --config=src/drizzle.config.ts",
+    "db:migrate": "npx drizzle-kit migrate --config=src/drizzle.config.ts"
+
   },
   "keywords": [],
   "author": "",
@@ -26,6 +29,7 @@
     "drizzle-orm": "^0.45.2",
     "esbuild": "^0.28.1",
     "express": "^5.2.1",
-    "pg": "^8.21.0"
+    "pg": "^8.21.0",
+    "postgres": "^3.4.9"
   }
 }
