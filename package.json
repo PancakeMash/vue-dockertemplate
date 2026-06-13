@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "install:all": "npm install",
-    "dev:backend": "npm run dev --workspace=backend",
-    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run api:dev --workspace=./backend",
+    "dev:frontend": "npm run dev --workspace=./frontend",
     "dev": "npx npm-run-all --parallel dev:backend dev:frontend"
   },
   "devDependencies": {
