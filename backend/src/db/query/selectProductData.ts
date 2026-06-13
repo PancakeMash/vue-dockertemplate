@@ -5,7 +5,4 @@ import { products } from "../schema.js";
 export async function readProducts() {
     const result = await db.execute(sql`SELECT * FROM products`);
     return result;
-
-    // const result = await db.execute(sql`SELECT current_database(), current_schema();`);
-    // console.log(result);
 }
